@@ -6,7 +6,7 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const MovieSlider = ({ title, movies, responsive }) => {
     return (
-        <div>
+        <div style={{ marginBottom: "10px" }}>
             <h3 className='MovieSlider-title'>{title}</h3>
             <Carousel
                 infinite={true}
@@ -16,7 +16,7 @@ const MovieSlider = ({ title, movies, responsive }) => {
                 responsive={responsive}
             >
                 {movies.map((movie, index) => <MovieCard movie={movie} key={index} />)}
-            </Carousel>;
+            </Carousel>
         </div>
     )
 }
