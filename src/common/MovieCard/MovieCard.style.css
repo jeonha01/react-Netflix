@@ -15,6 +15,7 @@
     color: white;
     font-weight: bold;
     overflow-wrap: break-word;
+    padding: 10px;
 }
 
 .overlay:hover {
@@ -24,4 +25,25 @@
 .movie-card:hover {
     transform: scale(1.3) translateZ(20px);
     z-index: 2;
+}
+
+.adultimg {
+    width: 30px;
+    border-radius: 5px;
+}
+
+.genre {
+    margin-right: 3px;
+}
+
+.movie-banner {
+    margin-top: 20px;
+}
+
+.avg-icon {
+    border-radius: 5px;
+}
+
+.adulticon {
+    margin-left: 10px;
 }

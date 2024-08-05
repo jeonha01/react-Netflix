@@ -10,8 +10,12 @@ const api = axios.create({
     }
 })
 
-axios.interceptors.request.use(function (config) {
+api.interceptors.request.use(function (config) {
     // 요청이 전달되기 전에 작업 수행
+    if (!config.params) {
+        config.params = {};
+    }
+    config.params['language'] = 'ko-KR';
     return config;
 }, function (error) {
     // 요청 오류가 있는 작업 수행
@@ -19,7 +23,7 @@ axios.interceptors.request.use(function (config) {
 });
 
 // 응답 인터셉터 추가하기
-axios.interceptors.response.use(function (response) {
+api.interceptors.response.use(function (response) {
     // 2xx 범위에 있는 상태 코드는 이 함수를 트리거 합니다.
     // 응답 데이터가 있는 작업 수행
     return response;

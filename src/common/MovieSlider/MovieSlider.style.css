@@ -1,0 +1,8 @@
+.carousel-container {
+    overflow: hidden;
+    height: 440px;
+}
+
+.MovieSlider-title {
+    padding-left: 2rem;
+}

@@ -5,6 +5,8 @@ import "./Banner.style.css"
 
 const Banner = () => {
 
+    const randomPoster = Math.floor(Math.random() * 20)
+
     const { data, isLoading, isError, error } = usePopularMoviesQuery()
     console.log(data)
     if (isLoading) {
@@ -15,13 +17,14 @@ const Banner = () => {
     }
     return (
         <div style={{
-            backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w533_and_h300_bestv2${data?.results[0].poster_path}` + ")",
+            backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w533_and_h300_bestv2${data?.results[randomPoster].backdrop_path
+                }` + ")",
         }}
             className='banner'
         >
             <div className='text-white banner-text-area'>
-                <h1>{data?.results[0].title}</h1>
-                <p>{data?.results[0].overview}</p>
+                <div style={{ fontSize: '3vw', fontWeight: "bold", marginBottom: "1vw" }}>{data?.results[randomPoster].title}</div>
+                <p style={{ fontSize: '1.2vw' }}>{data?.results[randomPoster].overview}</p>
             </div>
         </div>
     )

@@ -14,6 +14,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // 영화 디테일 페이지  주소: /movies/:id
 // 추천 영화 /movies/:id/recommandation
 // 리뷰 /movies/:id/reviews
+
+// 꾸밀때 참고
+// 서치박스 숨겼다가 아이콘 누르면 보여주기
+
 function App() {
   return (
 
