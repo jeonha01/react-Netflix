@@ -12,10 +12,10 @@ const api = axios.create({
 
 api.interceptors.request.use(function (config) {
     // 요청이 전달되기 전에 작업 수행
-    if (!config.params) {
-        config.params = {};
-    }
-    config.params['language'] = 'ko-KR';
+    // if (!config.params) {
+    //     config.params = {};
+    // }
+    // config.params['language'] = 'ko-KR';
     return config;
 }, function (error) {
     // 요청 오류가 있는 작업 수행

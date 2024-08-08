@@ -13,6 +13,14 @@ const AppLayout = () => {
     const [keyword, setKeyword] = useState('')
     const navigate = useNavigate()
 
+    const goToMoviesPage = () => {
+        navigate(`/movies`)
+    }
+
+    const goToHome = () => {
+        navigate(`/`)
+    }
+
     const searchByKeyword = (event) => {
         event.preventDefault()
         //url을 바꿔주기
@@ -30,8 +38,8 @@ const AppLayout = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link className="Button" href="/">홈</Nav.Link>
-                        <Nav.Link className="Button" href="movies">영화</Nav.Link>
+                        <Nav.Link className="Button" onClick={goToHome}>홈</Nav.Link>
+                        <Nav.Link className="Button" onClick={goToMoviesPage}>영화</Nav.Link>
 
 
                     </Nav>
