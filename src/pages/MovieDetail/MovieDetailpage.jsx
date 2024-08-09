@@ -7,6 +7,7 @@ import MovieBanner from './MovieBanner';
 import Badge from 'react-bootstrap/Badge';
 import MovieReview from './MovieReview';
 import MovieRecommend from './MovieRecommend';
+import MovieTrailer from '../Homepage/components/Banner/MovieTrailer';
 
 const MovieDetailpage = () => {
 
@@ -23,7 +24,7 @@ const MovieDetailpage = () => {
 
   return (
     <div>
-      <MovieBanner />
+      <MovieBanner id={id} />
       <div style={{ backgroundImage: "url(" + `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${data?.poster_path}` + ")" }}
         className='MovieDetailPoster'
       >
@@ -51,7 +52,7 @@ const MovieDetailpage = () => {
       <div>
         <MovieReview id={id} />
       </div>
-      <MovieRecommend id={id}/>
+      <MovieRecommend id={id} />
     </div>
 
   )

@@ -3,9 +3,10 @@ import { useMovieDetailQuery } from '../../hooks/useMovieDetail'
 import Alert from 'react-bootstrap/Alert';
 import { useParams } from 'react-router-dom';
 import "./MovieBanner.style.css"
+import MovieTrailer from '../Homepage/components/Banner/MovieTrailer';
 
-const MovieBanner = () => {
-    const { id } = useParams()
+const MovieBanner = ({id}) => {
+    
     const { data, isLoading, isError, error } = useMovieDetailQuery(id)
     console.log(data)
 
@@ -25,7 +26,9 @@ const MovieBanner = () => {
             <div className='text-white banner-text-area'>
                 <div style={{ fontSize: '3vw', fontWeight: "bold", marginBottom: "1vw" }}>{data?.title}</div>
                 <p style={{ fontSize: '1.2vw' }}>{data?.overview}</p>
+                <MovieTrailer id={id} />
             </div>
+
         </div></div>
     )
 }

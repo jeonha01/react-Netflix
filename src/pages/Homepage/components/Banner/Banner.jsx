@@ -2,11 +2,14 @@ import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import "./Banner.style.css"
+import MovieTrailer from './MovieTrailer';
+import { useParams } from 'react-router-dom';
+
 
 const Banner = () => {
-
+    
     const randomPoster = Math.floor(Math.random() * 20)
-
+    
     const { data, isLoading, isError, error } = usePopularMoviesQuery()
     console.log(data)
     if (isLoading) {
@@ -24,7 +27,8 @@ const Banner = () => {
         >
             <div className='text-white banner-text-area'>
                 <div style={{ fontSize: '3vw', fontWeight: "bold", marginBottom: "1vw" }}>{data?.results[randomPoster].title}</div>
-                <p style={{ fontSize: '1.2vw' }}>{data?.results[randomPoster].overview}</p>
+                <p style={{ fontSize: '1vw' }}>{data?.results[randomPoster].overview}</p>
+                {/* <MovieTrailer id={data} /> */}
             </div>
         </div>
     )
