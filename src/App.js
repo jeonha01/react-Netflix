@@ -17,7 +17,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // 꾸밀때 참고
 // 서치박스 숨겼다가 아이콘 누르면 보여주기
-// 필터
 // moviespage 핸드폰 버전
 function App() {
   return (
